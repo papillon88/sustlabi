@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by papillon on 5/19/2017.
  */
-@Repository
+@Repository("messages")
 public class TessMessageDAO {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;

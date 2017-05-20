@@ -1,4 +1,4 @@
-package com.papillon.dc.service;
+package com.papillon.dc.controllers;
 
 import com.papillon.dc.dao.TessMessage;
 import com.papillon.dc.dao.TessMessageDAO;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by papillon on 5/19/2017.
  */
-@Service
+@Service("service")
 public class TessMessageService {
 
     private TessMessageDAO tessMessageDAO;
