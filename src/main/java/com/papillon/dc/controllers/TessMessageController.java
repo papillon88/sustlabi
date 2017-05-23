@@ -1,6 +1,7 @@
 package com.papillon.dc.controllers;
 
 import com.papillon.dc.dao.TessMessage;
+import com.papillon.dc.service.TessMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,9 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,6 +37,8 @@ public class TessMessageController {
                 System.out.println(error.getDefaultMessage());
             }
         }
+        Instant now = Instant.now();
+        tessMessage.setDate(now.toString());
         tessMessageService.createMessage(tessMessage);
         return "link";
     }

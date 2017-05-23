@@ -27,7 +27,7 @@ public class TessMessageDAO {
     public boolean createTessMessage(TessMessage tessMessage){
         BeanPropertySqlParameterSource beanPropertySqlParameterSource =
                 new BeanPropertySqlParameterSource(tessMessage);
-        return namedParameterJdbcTemplate.update("insert into tessdata(message) values(:message)",
+        return namedParameterJdbcTemplate.update("insert into tessdata(message,datetime) values(:message,:date)",
                 beanPropertySqlParameterSource)==1;
     }
 
@@ -38,6 +38,7 @@ public class TessMessageDAO {
                     public TessMessage mapRow(ResultSet rs, int rowNum) throws SQLException {
                         TessMessage tessMessage = new TessMessage();
                         tessMessage.setMessage(rs.getString("message"));
+                        tessMessage.setDate(rs.getString("datetime"));
                         return tessMessage;
                     }
                 });
