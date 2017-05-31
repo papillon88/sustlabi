@@ -45,7 +45,9 @@ public class TessMessageController {
 
     @RequestMapping(value = "/messages",method = RequestMethod.GET)
     public String getMessages(Model model){
-        model.addAttribute("messages",tessMessageService.getMessages());
+        List<TessMessage> list = tessMessageService.getMessages();
+        model.addAttribute("tessmessage",list.get(list.size()-1));
+        //model.addAttribute("messages",tessMessageService.getMessages());
         return "index";
     }
 }
