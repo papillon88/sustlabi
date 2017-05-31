@@ -14,8 +14,9 @@
   </head>
   <body>
 
-
-  <h1 align="center" style="font-size:100px;margin-top:100px;color: #2C9B66"><c:out value="${tessmessage.message}"></c:out></h1>
+  <h3 align="center" style="color: #2C9B66">Tesseract Decoded Messages</h3>
+  <br><br>
+  <h1 align="center" style="font-size:100px;margin-top:100px;color: #2C9B66"><c:out value="${tessmessage.message eq '' ? 'Null' : tessmessage.message}"></c:out></h1>
   <h3 align="center" style="color: #2C9B66"><c:out value="(${tessmessage.date})"></c:out></h3>
 
   <br>
