@@ -14,7 +14,7 @@
   </head>
   <body>
 
-  <%--<table>
+  <table>
     <tr><th>Message</th><th>Date&Time(UTC)</th></tr>
     <c:forEach var="row" items="${messages}">
     <tr>
@@ -22,7 +22,7 @@
       <td><c:out value="${row.date}"></c:out></td>
     </tr>
     </c:forEach>
-  </table>--%>
+  </table>
 
   <h1 align="center" style="font-size:100px;margin-top:100px;color: #2C9B66"><c:out value="${tessmessage.message}"></c:out></h1>
   <h3 align="center" style="color: #2C9B66"><c:out value="(${tessmessage.date})"></c:out></h3>

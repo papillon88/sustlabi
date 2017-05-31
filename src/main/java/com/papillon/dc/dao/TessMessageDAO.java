@@ -32,7 +32,7 @@ public class TessMessageDAO {
     }
 
     public List<TessMessage> getTessMessages(){
-        return namedParameterJdbcTemplate.query("select * from tessdata",
+        return namedParameterJdbcTemplate.query("select * from tessdata order by datetime",
                 new RowMapper<TessMessage>() {
                     @Override
                     public TessMessage mapRow(ResultSet rs, int rowNum) throws SQLException {

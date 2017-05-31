@@ -47,7 +47,7 @@ public class TessMessageController {
     public String getMessages(Model model){
         List<TessMessage> list = tessMessageService.getMessages();
         model.addAttribute("tessmessage",list.get(list.size()-1));
-        //model.addAttribute("messages",tessMessageService.getMessages());
+        model.addAttribute("messages",list);
         return "index";
     }
 }
